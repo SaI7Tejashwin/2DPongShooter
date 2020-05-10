@@ -11,7 +11,7 @@ function Spaceship:new()
 end
 
 function Spaceship:draw()
-  love.graphics.draw(self.image, self.x, self.y)
+  love.graphics.draw(self.image, self.x, self.y, math.rad(0), 2, 2)
 end
 
 function Spaceship:update(dt)
