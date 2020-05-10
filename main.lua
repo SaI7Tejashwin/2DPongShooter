@@ -29,8 +29,8 @@ end
 function love.update(dt)
   ---p:update(dt)
   sps:update(dt)
-  e1:update(dt)
-  e2:update(dt)
+  --e1:update(dt)
+  --e2:update(dt)
   s:update(dt)
   --ob:update(dt)
 
@@ -49,13 +49,19 @@ function love.update(dt)
       table.remove(listOfBullets, i)
     end
   end
+
+  for i,v in ipairs(listOfBullets) do
+    for j,t in ipairs(asteroids) do
+      v:checkCollision(t)
+    end
+  end
 end
 
 function love.draw()
   ---p:draw()
   sps:draw()
-  e1:draw()
-  e2:draw()
+  --e1:draw()
+  --e2:draw()
   --ob:draw()
 
   for j,t in ipairs(asteroids) do
